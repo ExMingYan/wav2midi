@@ -1,0 +1,16 @@
+.vscode/
+build/
+
+wav2midi
+*.bin
+*.elf
+*.o
+*.a
+*.out
+*.exe
+*.wav
+*.mid
+*.midi
+*.mp3
+*.flac
+*.ogg

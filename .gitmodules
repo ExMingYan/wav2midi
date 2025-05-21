@@ -1,0 +1,4 @@
+[submodule "midifile"]
+    path = midifile
+    url = https://github.com/craigsapp/midifile.git
+    branch = master
