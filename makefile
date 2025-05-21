@@ -17,15 +17,18 @@ else
 EXE =
 endif
 
-.PHONY: all clean
+.PHONY: all clean tidy
 all: $(TARGET)$(EXE)
 
 clean:
 	$(RM) -f $(TARGET)$(EXE)
-	$(MAKE) -C $(MIDIFILE_DIR) clean
+	@$(MAKE) -C $(MIDIFILE_DIR) clean
+
+tidy:
+	$(RM) -f $(TARGET)$(EXE)
 
 $(MIDIFILE_LIB):
-	$(MAKE) library -C $(MIDIFILE_DIR)
+	@$(MAKE) library -C $(MIDIFILE_DIR)
 
 $(TARGET)$(EXE): $(SRCS) $(MIDIFILE_LIB)
-	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+	$(CC) $(CFLAGS) -o $@ $< $(LDFLAGS)
